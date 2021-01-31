@@ -6,6 +6,10 @@
 
     global plotmandel
 
+
+section .bss
+    pass resd 1
+
 section .text
 
 plotmandel:
@@ -13,7 +17,11 @@ plotmandel:
     mov rbp, rsp
     SHADOWSPACE
 
+    xor rax,rax
+    mov qword[pass], rax   
 
+    mov dword[pass], 0xffff0000    ;pass color 0x0000ffff -- blue
+    mov rax, qword[pass]           ;little endian
 
     SHADOWREMOVE
     mov rsp,rbp

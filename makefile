@@ -17,7 +17,7 @@ rayview.obj: rayview.asm
 mandelbrot.obj: framework.asm 
 > nasm $(FLAGS)
 
-mandelplot.obj: mandelbrot.asm
+mandelplot.obj: mandelplot.asm
 > nasm $(FLAGS)
 
 clean:

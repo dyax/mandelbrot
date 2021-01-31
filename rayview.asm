@@ -13,6 +13,7 @@
     extern DrawText
     extern GetColor 
     extern CloseWindow
+    extern DrawPixel
 
     extern pstate
     extern exit
@@ -61,6 +62,11 @@ drawloop:
     call ClearBackground
 
     call plotmandel
+
+    mov rcx,100
+    mov rdx,100
+    mov r8, rax
+    call DrawPixel
 
     call EndDrawing
 
