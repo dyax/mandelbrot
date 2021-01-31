@@ -16,13 +16,14 @@
 
     extern pstate
     extern exit
+    extern plotmandel
 
     SCREENWIDTH equ 1280
     SCREENHEIGHT equ 720
 
     global init
 
-section .text
+section .data
     title db "Mandelbrot Plot",0
 
 section .text
@@ -58,6 +59,8 @@ drawloop:
 
     mov rcx, 0xff828282
     call ClearBackground
+
+    call plotmandel
 
     call EndDrawing
 
