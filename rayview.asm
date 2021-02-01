@@ -26,6 +26,10 @@
 
 section .data
     title db "Mandelbrot Plot",0
+    left dq -2.5
+    top  dq 2.5
+    xside dq 1.25
+    yside dq -2.0    
 
 section .text
 
@@ -60,7 +64,11 @@ drawloop:
 
     mov rcx, 0xff828282
     call ClearBackground
-
+    
+    mov rcx, qword[left] 
+    mov rdx, qword[top]
+    mov r8, qword[xside]
+    mov r9, qword[yside]
     call plotmandel
 
     mov rcx,100
